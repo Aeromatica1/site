@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/register")
 public class AuthController {
+    private final UserService userService;
+
+    public AuthController(UserService userService) {
+        this.userService = userService;
+    }
+
     @GetMapping
     public String registerForm() {
         return "register.html";
@@ -20,7 +26,7 @@ public class AuthController {
     @PostMapping
     @ResponseBody
         public ResponseEntity<RegisterResponse> registerAccount(@Valid @RequestBody RegisterRequest request) {
-            RegisterResponse response = new RegisterResponse(request.name(), request.email());
+            RegisterResponse response = userService.registerUser(request);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

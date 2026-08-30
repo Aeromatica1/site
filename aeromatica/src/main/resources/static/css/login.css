@@ -1,0 +1,124 @@
+.background-container {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    overflow: hidden; 
+}
+
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/fundoaeroporto2.png');
+    background-size: cover;
+    background-position: left;
+    filter: blur(8px); 
+    transform: scale(1.1); 
+    z-index: -1;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    z-index: 1;
+}
+
+.form-login{
+    border: 3px solid black;
+    background-color: var(--azul-profundo);
+    padding: 20px;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.form-login label{
+    font-weight: bold;
+    color: var(--branco);
+    cursor: default;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-login input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-login input[id="password"] {
+    margin-bottom: 0; 
+    padding-right: 40px; 
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666; 
+    font-size: 16px;
+    width: 20px !important; 
+    height: 20px !important;
+    display: flex !important; 
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-icon:hover {
+    color: #000;
+    transition: color 0.3s;
+}
+
+.toggle-icon.hide {
+    display: none !important;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+    text-align: right;
+    color: var(--branco);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.login-container .btn-sec {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--azul-profundo);
+    color: var(--branco);
+    border: 1px solid var(--amarelo-aeromatica);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#btn-register {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#btn-register:hover {
+    color: var(--amarelo-aeromatica);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
