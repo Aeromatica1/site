@@ -22,8 +22,8 @@
   --cinza-claro: #e8eef4;     /* fundos e separações */
 
 
-  --fonte-principal: "Exo 2", sans-serif;
-  --peso-bold: 700;
+  --fonte-principal: "Exo 2", sans-serif; /* fonte para títulos e textos principais */
+  --peso-bold: 700; /* fonte em negrito */
 }
 
 body {
@@ -44,7 +44,7 @@ body {
 }
 
 .area-nav p {
-    font-size: 10px;
+    font-size: 11px;
     margin-left: 30px;
     cursor: default;
 }
@@ -90,7 +90,7 @@ a:hover {
 
 .btn-nav:hover {
     color: var(--branco);
-    background-color: #99853c;
+    background-color: #795f03;
     transition: background-color 0.5s;
 }
 
