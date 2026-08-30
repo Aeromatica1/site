@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Aeromática</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/global.css">
 
     <script src="script/login.js" defer></script>
 </head>
-<body>
+<body class="login-body">
     <nav class="area-nav">
         <span class="titulo">
             <p class="nav-title">AEROMÁTICA</p>
@@ -21,14 +22,26 @@
         <a href="#">EQUIPE</a>
         <a href="#" class="btn-nav">DOWNLOAD <i class="fa-solid fa-download"></i></a>
     </nav>
+    <div class="background-container">
+        <main class="login-container">
+            <form action="/login" method="post" class="form-login">
+                <label for="username"><i class="fa-solid fa-circle-user"></i> Usuário: </label>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+                
+                <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
 
-    <form action="/login" method="post">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
+                <label for="password"><i class="fa-solid fa-lock"></i>Senha:</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                        <i class="fa-solid fa-eye toggle-icon" id="showPassword"></i>
+                        <i class="fa-solid fa-eye-slash toggle-icon hide" id="hidePassword"></i>
+                </div>
+                <a href="#" class="forgot-password">Esqueci minha senha</a>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Entrar</button>
+                <button type="submit" class="btn-sec">Entrar</button>
+            </form>
+        </main>
+    </div>
 </body>
 </html>
