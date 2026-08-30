@@ -1,5 +1,6 @@
 @import url(index.css);
 @import url(register.css);
+@import url(login.css);
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;700&display=swap');
 
 
@@ -27,7 +28,7 @@
 body {
   font-family: var(--fonte-principal);
   background-color: var(--cinza-claro);
-  color: var(--preto);
+  color: var(--branco);
 }
 
 .area-nav {
@@ -44,10 +45,11 @@ body {
 .area-nav p {
     font-size: 10px;
     margin-left: 30px;
+    cursor: default;
 }
 
 .area-nav p.nav-title {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: var(--peso-bold);
     justify-self: center;
     color: var(--amarelo-aeromatica);
@@ -129,6 +131,26 @@ a:hover {
 }
 
 .btn-sec:hover {
+    background-color: var(--amarelo-aeromatica);
+    color: var(--preto);
+    transition: background-color 0.5s;
+}
+
+.btn-ter {
+    text-align: center;
+    color: var(--amarelo-aeromatica);
+    border: solid var(--amarelo-aeromatica) 2px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    word-spacing: 3px;
+    letter-spacing: 1.5px;
+    width: 230px;
+}
+
+.btn-ter:hover {
     background-color: var(--amarelo-aeromatica);
     color: var(--preto);
     transition: background-color 0.5s;

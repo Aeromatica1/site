@@ -8,14 +8,14 @@ body {
     background-color: #ffffff;
 }
 
-.container {
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.content{
+.hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,27 +27,65 @@ body {
     background-position: bottom;
 }
 
-.content p {
+.hero-section p {
     font-size: 24px;
     font-weight: bold;
     color: var(--branco);
+    cursor: default;
 }
 
-.content img {
+.hero-section img {
     width: 500px;
     height: auto;
     margin-bottom: 10px;
 }
 
-
 .titulo {
-    color: #ffffff;
+    color: var(--branco);
     font-size: 18px;
     font-weight: bold;
 }
 
-
-
-.btn-criar-conta:hover {
-    opacity: 0.85;
+.section-aeromatica {
+    background-color: var(--azul-profundo);
+    display: flex;         
+    align-items: center;  
+    justify-content: space-between;
+    gap: 40px;             
+    padding: 20px;
+    width: 100%;
 }
+
+.text-content {
+    flex: 1;
+    word-spacing: 3px;
+    margin-left: 120px;
+}
+
+.text-content > p {
+      margin-bottom: 40px
+}
+.text-content > h1{
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: var(--peso-bold);
+}
+
+.text-content > .btn-ter {
+    width: 230px;
+}
+
+.img-section {
+    flex: 1;
+    text-align: right;
+    margin-right: 120px;
+}
+
+.img-section img {
+    max-width: 100%;       
+    height: auto;
+    border-radius: 12px;   
+    border: 2px solid var(--branco);
+
+}
+
