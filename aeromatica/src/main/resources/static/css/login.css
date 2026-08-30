@@ -109,3 +109,16 @@
     cursor: pointer;
     font-size: 16px;
 }
+
+#btn-register {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#btn-register:hover {
+    color: var(--amarelo-aeromatica);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
