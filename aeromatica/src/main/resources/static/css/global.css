@@ -15,6 +15,7 @@
 :root {
   --azul-ceu: #3184d2;        /* fundos, hero, elementos principais */
   --azul-profundo: #051a39;   /* navbar, footer, áreas escuras */
+  --azul-escuro: #012f74;      /* hover, detalhes */
   --azul-medio: #155a96;      /* cards, botões secundários */
   --amarelo-aeromatica: #ffd43b; /* logo, CTA, destaques */
   --branco: #ffffff;          /* textos principais */
