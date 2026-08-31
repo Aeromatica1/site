@@ -10,26 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById("password").value;
 
         const payload = {
-            "name": name,
-            "email": email,
-            "password": password,
+            name: name,
+            email: email,
+            password: password
         };
 
-        const request = await fetch("/register", {
+        const response = await fetch("/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(payload)
         });
-        const response = await request.json();
+        const data = await response.json();
 
-        if (response.status === 400) {
-            message.innerText = response.message;
+        if (data.status === 400) {
+            message.innerText = data.message;
         } else {
-            message.innerText = "Nome: " + response.name + ". Email: " + response.email;
+            message.innerText = "Nome: " + data.name + ". Email: " + data.email;
         }
-
-        console.log(response);
     })
 })
