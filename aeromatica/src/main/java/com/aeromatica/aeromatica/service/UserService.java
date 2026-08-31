@@ -1,17 +1,17 @@
-package com.aeromatica.aeromatica;
+package com.aeromatica.aeromatica.service;
 
-import com.aeromatica.aeromatica.dto.LoginRequest;
+import com.aeromatica.aeromatica.User;
+import com.aeromatica.aeromatica.UserRepository;
 import com.aeromatica.aeromatica.dto.RegisterRequest;
 import com.aeromatica.aeromatica.dto.RegisterResponse;
 import com.aeromatica.aeromatica.exception.UserAlreadyExistsException;
-import com.aeromatica.aeromatica.exception.UserNotExistsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class UserService {
-    private final  UserRepository userRepository;
+    private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
