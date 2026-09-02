@@ -5,7 +5,7 @@ COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 RUN ./mvnw dependency:go-offline -B
 
-COPY src ./src
+COPY src ./aeromatica/src
 RUN ./mvnw clean package -DskipTests -B
 
 FROM eclipse-temurin:26-jre
