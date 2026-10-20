@@ -1,5 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
+document.addEventListener("DOMContentLoaded", () => {
+    const showPasswordIcon = document.querySelector("#showPassword");
+    const hidePasswordIcon = document.querySelector("#hidePassword");
+    const passwordInput = document.querySelector("#password");
+
+    showPasswordIcon.addEventListener("click", () => {
+        passwordInput.setAttribute("type", "text");
+        showPasswordIcon.classList.add("hide");
+        hidePasswordIcon.classList.remove("hide");
+    });
+
+    hidePasswordIcon.addEventListener("click", () => {
+        passwordInput.setAttribute("type", "password");
+        hidePasswordIcon.classList.add("hide");
+        showPasswordIcon.classList.remove("hide");
+    });
+
+     const form = document.querySelector('form');
     const message = document.getElementById("message");
 
     form.addEventListener('submit', async (e) => {
@@ -30,4 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
             message.innerText = "Nome: " + data.name + ". Email: " + data.email;
         }
     })
-})
+});
