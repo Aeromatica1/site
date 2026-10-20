@@ -11,48 +11,87 @@
 <body>
 
     <nav class="area-nav">
-        <span class="titulo">
+        <div class="titulo">
             <p class="nav-title">AEROMÁTICA</p>
             <p>O Jogo Matemático de Administração de Aeroportos</p>
-        </span>
+        </div>
         <a href="#" class="initial">O JOGO</a>
         <a href="#">RANKING</a>
         <a href="#">MÍDIA</a>
         <a href="#">EQUIPE</a>
         <a href="#" class="btn-nav">DOWNLOAD <i class="fa-solid fa-download"></i></a>
-        <a href="login.html" class="login-icon"><i class="fa-regular fa-circle-user"></i></a>
+        <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user"></i></a>
     </nav>
 
     <main class="equipe-container">
+        <div class="background-image">
+            <img src="assets/fundoaeroporto2.png" alt="">
+        </div>
+
         <h1>Equipe Aeromática</h1>
+
         <div class="team-members">
-    
-            <div class="kenji">
-                <img src="kenji" alt="Imagem de Kenji">
-                <p>Kenji Ogawa Morimoto</p>
-                <p>Desenvolvimento Back-end, Banco de Dados</p>
-            </div>
-            <div class="levi">
-                <img src="levi" alt="Imagem de Levi">
-                <p>Levi Alves Sant'ana</p>
-            <p>Artes, documentação, </p>
-            </div>
-            <div class="lucas">
-                <img src="lucas" alt="Imagem de Lucas">
-                <p>Lucas Pereira Cardoso</p>
-                <p>Desenvolvimento Front-end, UI/UX, Desenvolvimento da Interface de Usuário do Jogo</p>
-            </div>
-            <div class="raphael">
-                <img src="raphael" alt="Imagem de Raphael">
-                <p>Raphael Vicente</p>
-                <p>Desenvolvimento da programação do jogo</p>
-            </div>
-            <div class="valter">
-                <img src="valter" alt="Imagem de Valter">
-                <p>Valter de Sales</p>
-                <p>Desenvolvimento da Interface de Usuário do Jogo, Desenvolvimento da programação do jogo</p>
-            </div>
+            <article class="membro">
+                <img src="assets/kenji.jpeg" alt="Foto de Kenji Ogawa Morimoto">
+                <h2>Kenji Ogawa Morimoto</h2>
+                <p>Desenvolvimento Back-end, Integração e desenvolvimento do Banco de Dados</p>
+            </article>
+
+            <article class="membro">
+                <img src="assets/kenji.jpeg" alt="Foto de Levi Alves Sant'ana">
+                <h2>Levi Alves Sant'ana</h2>
+                <p>Artes do jogo, documentação, Desenvolvimento da UI do jogo</p>
+            </article>
+
+            <article class="membro">
+                <img src="assets/kenji.jpeg" alt="Foto de Lucas Pereira Cardoso">
+                <h2>Lucas Pereira Cardoso</h2>
+                <p>Desenvolvimento Front-end, Design UI/UX, Desenvolvimento da UI e programação do jogo</p>
+            </article>
+
+            <article class="membro">
+                <img src="assets/kenji.jpeg" alt="Foto de Raphael Vicente">
+                <h2>Raphael Vicente</h2>
+                <p>Desenvolvimento da lógica e programação do jogo</p>
+            </article>
+
+            <article class="membro">
+                <img src="assets/kenji.jpeg" alt="Foto de Valter de Sales">
+                <h2>Valter de Sales</h2>
+                <p>Desenvolvimento da UI, lógica e programação do jogo</p>
+            </article>
         </div>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <p class="footer-title">AEROMÁTICA</p>
+                <p>O Jogo Matemático de Administração de Aeroportos.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <h3>NAVEGAÇÃO</h3>
+                <ul>
+                    <li><a href="#">O Jogo</a></li>
+                    <li><a href="#">Ranking</a></li>
+                    <li><a href="#">Mídia</a></li>
+                    <li><a href="#">Equipe</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-nav" aria-label="Conta e download">
+                <h3>JOGAR</h3>
+                <ul>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Equipe Aeromática &middot; Projeto escolar, sem fins lucrativos</p>
+        </div>
+    </footer>
 </body>
 </html>
