@@ -3,6 +3,7 @@
 @import url(login.css);
 @import url(jogo.css);
 @import url(equipe.css);
+@import url(footer.css);
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;700&display=swap');
 
 
@@ -164,4 +165,50 @@ a:hover {
     background-color: var(--amarelo-aeromatica);
     color: var(--preto);
     transition: background-color 0.5s;
+}
+
+.background-container {
+    position: relative;
+    isolation: isolate;       /* novo: mantém o fundo desfocado (z-index -1) dentro do container */
+    flex: 1;                  /* novo: ocupa o espaço entre o nav e o footer */
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    overflow: hidden;
+}
+
+.form-login {
+    border: 3px solid black;
+    background-color: var(--azul-profundo);
+    padding: 20px;
+    min-height: 350px;        /* era height: 350px */
+    width: 400px;
+    max-width: 90%;           /* novo: não estoura em telas pequenas */
+    box-sizing: border-box;   /* novo: o padding não soma na largura */
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.form-login p {
+    color: var(--branco);
+    font-size: 14px;
+}
+
+.login-container .btn-sec {
+    margin-top: 10px;         /* novo: respiro acima do botão */
+}
+
+/* deixa o link do login com o mesmo estilo do link de cadastro */
+#btn-register,
+#btn-login {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#btn-register:hover,
+#btn-login:hover {
+    color: var(--amarelo-aeromatica);
+    text-decoration: underline;
+    transition: color 0.3s;
 }
