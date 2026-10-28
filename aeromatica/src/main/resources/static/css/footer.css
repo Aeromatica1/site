@@ -10,7 +10,7 @@ body > main {
 
 .site-footer {
     font-family: var(--fonte-principal);
-    background-color: var(--azul-escuro);
+    background-color: var(--azul-profundo);
     color: var(--branco);
     border-top: 3px solid var(--amarelo-aeromatica);
     padding: 24px 30px 12px;
