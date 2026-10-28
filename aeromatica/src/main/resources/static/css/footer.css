@@ -81,6 +81,7 @@ body > main {
 .footer-nav a:focus-visible {
     color: var(--amarelo-aeromatica);
     opacity: 1;
+    text-decoration: underline;
 }
 
 .footer-bottom {
