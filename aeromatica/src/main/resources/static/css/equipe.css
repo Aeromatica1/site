@@ -4,7 +4,7 @@
     background-color: var(--azul-escuro);
     text-align: center;
     padding: 30px;
-    margin-bottom: 0;        /* era 40px, causava o vão antes do footer */
+    margin-bottom: 0;
     word-spacing: 3px;
     width: 100%;
     min-height: 500px;
@@ -30,7 +30,6 @@
     width: 100%;
     box-sizing: border-box;
 }
-
 
 .membro {
     background-color: var(--azul-medio);
