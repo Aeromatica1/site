@@ -1,0 +1,85 @@
+.equipe-container {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--azul-escuro);
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 0;        /* era 40px, causava o vão antes do footer */
+    word-spacing: 3px;
+    width: 100%;
+    min-height: 500px;
+    box-sizing: border-box;
+}
+
+.equipe-container > h1 {
+    color: var(--branco);
+    font-size: 36px;
+    font-weight: var(--peso-bold);
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--amarelo-aeromatica);
+    width: 100%;
+    text-align: center;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;         
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.membro {
+    background-color: var(--azul-medio);
+    color: var(--branco);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 0 1 220px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.membro img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.membro h2 {
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.membro p {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+.background-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.background-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--azul-escuro);
+    opacity: 0.8;
+}
+

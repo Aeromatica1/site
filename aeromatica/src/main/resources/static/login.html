@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/global.css">
 
-    <script src="/script/login.js" defer></script>
+    <script src="script/login.js" defer></script>
 </head>
 <body class="login-body">
-    <nav class="area-nav">
-        <span class="titulo">
+    <nav class="area-nav" aria-label="Navegação principal">
+        <div class="titulo">
             <p class="nav-title">AEROMÁTICA</p>
             <p>O Jogo Matemático de Administração de Aeroportos</p>
-        </span>
-        <a href="#" class="initial">O JOGO</a>
+        </div>
+        <a href="index.html" class="initial">O JOGO</a>
         <a href="#">RANKING</a>
         <a href="#">MÍDIA</a>
-        <a href="#">EQUIPE</a>
+        <a href="equipe.html">EQUIPE</a>
         <a href="#" class="btn-nav">DOWNLOAD <i class="fa-solid fa-download"></i></a>
-        <a href="login.html" class="login-icon"><i class="fa-regular fa-circle-user"></i></a>
+        <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user"></i></a>
     </nav>
     <div class="background-container">
         <main class="login-container">
@@ -37,6 +37,7 @@
                         <i class="fa-solid fa-eye-slash toggle-icon hide" id="hidePassword"></i>
                 </div>
                 <a href="#" class="forgot-password">Esqueci minha senha</a>
+                <hr class="login-line">
                 <p id="message"></p>
                 <p>Não possui uma conta? <a href="register.html" id="btn-register">Cadastre-se</a></p>
 
@@ -44,5 +45,35 @@
             </form>
         </main>
     </div>
+        <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <p class="footer-title">AEROMÁTICA</p>
+                <p>O Jogo Matemático de Administração de Aeroportos.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <h3>NAVEGAÇÃO</h3>
+                <ul>
+                    <li><a href="#">O Jogo</a></li>
+                    <li><a href="#">Ranking</a></li>
+                    <li><a href="#">Mídia</a></li>
+                    <li><a href="#">Equipe</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-nav" aria-label="Conta e download">
+                <h3>JOGAR</h3>
+                <ul>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Equipe Aeromática &middot; Projeto escolar, sem fins lucrativos</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -3,86 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aeromática: o jogo matemático de administração de aeroportos.">
     <title>Aeromática</title>
+
+    <!-- Marca a página como "com JS" antes de renderizar: as animações só escondem o conteúdo se o JS estiver ativo -->
+    <script>document.documentElement.classList.add("js");</script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/global.css">
-
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
 
     <script src="script/index.js" defer></script>
+    <script src="script/reveal.js" defer></script>
 </head>
 <body>
 
-<nav class="area-nav">
-    <span class="titulo">
+<nav class="area-nav" aria-label="Navegação principal">
+    <div class="titulo">
         <p class="nav-title">AEROMÁTICA</p>
         <p>O Jogo Matemático de Administração de Aeroportos</p>
-    </span>
-    <a href="#" class="initial">O JOGO</a>
+    </div>
+    <a href="index.html" class="initial">O JOGO</a>
     <a href="#">RANKING</a>
     <a href="#">MÍDIA</a>
-    <a href="#">EQUIPE</a>
+    <a href="equipe.html">EQUIPE</a>
     <a href="#" class="btn-nav">DOWNLOAD <i class="fa-solid fa-download"></i></a>
-    <a href="login.html" class="login-icon"><i class="fa-regular fa-circle-user"></i></a>
+    <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user"></i></a>
 </nav>
 
 <main class="container">
-    <div class="hero-section">
+    <section class="hero-section">
         <img src="assets/logoaeromatica.png" alt="Logo da Aeromática" class="logo">
-        <p>O JOGO</p>
-        <p>DE ADMINISTRAÇÃO DE AEROPORTOS</p>
+        <h1>O JOGO<br>DE ADMINISTRAÇÃO DE AEROPORTOS</h1>
         <a href="#" class="btn-main">BAIXAR O JOGO <i class="fa-solid fa-download"></i></a>
-        <a href="#" class="btn-sec">SAIBA MAIS</a>
-    </div>
-    <section class="section-aeromatica">
-        <div class="text-content">
-            <h1>O QUE É AEROMÁTICA?</h1>
-            <p>Aeromática é um jogo de simulação e administração de aeroportos onde você toma decisões estratégicas para fazer seu empreendimento crescer.
-                <br><br>
-                Gerencie recursos, organize operações, enfrente desafios matemáticos e busque o melhor desempenho do seu aeroporto!</p>    
+        <a href="#o-jogo" class="btn-sec">SAIBA MAIS</a>
+    </section>
+
+    <section class="section-aeromatica" id="o-jogo">
+        <div class="text-content reveal reveal-left">
+            <h2>O QUE É AEROMÁTICA?</h2>
+            <p>Aeromática é um jogo de simulação e administração de aeroportos onde você toma decisões estratégicas para fazer seu empreendimento crescer.</p>
+            <p>Gerencie recursos, organize operações, enfrente desafios matemáticos e busque o melhor desempenho do seu aeroporto!</p>
             <a href="#" class="btn-ter">CONHEÇA O JOGO</a>
         </div>
-        <div class="img-section">
-            <img src="assets/fotoaeroporto.png" alt="Foto do aeroporto">
+        <div class="img-section reveal reveal-right">
+            <img src="assets/fotoaeroporto.png" alt="Foto do aeroporto" loading="lazy">
         </div>
     </section>
-    <section class="howitwork-section">
-        <h1>COMO FUNCIONA?</h1>
+
+    <section class="howitwork-section" id="como-funciona">
+        <h2 class="reveal">COMO FUNCIONA?</h2>
         <div class="cards-container">
-            <div class="card-manage">
+            <article class="card reveal" style="--delay: 0s">
                 <div class="card-content">
-                    <h2>ADMINISTRE</h2>
+                    <h3>ADMINISTRE</h3>
                     <p>Gerencie recursos e organize operações para fazer seu aeroporto prosperar.</p>
-                    
                 </div>
-                <img src="assets/fotoaeroporto.png" alt="teste">
-            </div>
-            <div class="card-decide">
+                <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
+            </article>
+
+            <article class="card reveal" style="--delay: 0.15s">
                 <div class="card-content">
-                    <h2>TOME DECISÕES</h2>
+                    <h3>TOME DECISÕES</h3>
                     <p>Defina estratégias e resolva situações do dia a dia.</p>
                 </div>
-                <img src="assets/fotoaeroporto.png" alt="teste">
-            </div>
-            <div class="card-solve">
+                <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
+            </article>
+
+            <article class="card reveal" style="--delay: 0.3s">
                 <div class="card-content">
-                    <h2>RESOLVA DESAFIOS</h2>
-                    <p>Use raciocinio lógico e conhecimentos matemáticos para superar desafios.</p>
+                    <h3>RESOLVA DESAFIOS</h3>
+                    <p>Use raciocínio lógico e conhecimentos matemáticos para superar desafios.</p>
                 </div>
-                <img src="assets/fotoaeroporto.png" alt="teste">
-            </div>
-            <div class="card-evolve">
+                <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
+            </article>
+
+            <article class="card reveal" style="--delay: 0.45s">
                 <div class="card-content">
-                    <h2>EVOLUA</h2>
+                    <h3>EVOLUA</h3>
                     <p>Melhore seu aeroporto, aumente sua capacidade e conectividade.</p>
                 </div>
-                <img src="assets/fotoaeroporto.png" alt="teste">
-            </div>
+                <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
+            </article>
         </div>
     </section>
-    
-
 </main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <p class="footer-title">AEROMÁTICA</p>
+            <p>O Jogo Matemático de Administração de Aeroportos.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+            <h3>NAVEGAÇÃO</h3>
+            <ul>
+                <li><a href="index.html">O Jogo</a></li>
+                <li><a href="#">Ranking</a></li>
+                <li><a href="#">Mídia</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-nav" aria-label="Conta e download">
+            <h3>JOGAR</h3>
+            <ul>
+                <li><a href="#">Download</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Equipe Aeromática &middot; Projeto escolar, sem fins lucrativos</p>
+    </div>
+</footer>
 
 </body>
 </html>

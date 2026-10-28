@@ -91,14 +91,21 @@
 
 .forgot-password {
     display: block;
-    margin-top: 15px; 
-    margin-bottom: 25px; 
+    margin-top: 15px;
+    margin-bottom: 0;
     text-align: right;
     color: var(--branco);
     font-size: 14px;
     text-decoration: none;
-    border-bottom: 1px solid var(--amarelo-aeromatica);
-    padding-bottom: 15px;
+
+    margin-left: 50%;
+    padding-bottom: 5px;
+}
+
+.login-line {
+    border: none;
+    border-top: 1px solid var(--amarelo-aeromatica);
+    margin: 0 0 25px;
 }
 
 .login-container .btn-sec {
