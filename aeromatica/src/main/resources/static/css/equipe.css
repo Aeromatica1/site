@@ -16,9 +16,25 @@
     font-size: 36px;
     font-weight: var(--peso-bold);
     padding-bottom: 20px;
-    border-bottom: 2px solid var(--amarelo-aeromatica);
     width: 100%;
     text-align: center;
+    position: relative; 
+}
+
+.equipe-container > h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--amarelo-aeromatica);
+    transition: width 0.8s ease-in-out; 
+    transition-delay: 0.3s;
+}
+
+.js .equipe-container > h1.visible::after {
+    width: 100%;
 }
 
 .team-members {
@@ -59,7 +75,6 @@
     margin: 0;
 }
 
-
 .background-image {
     position: absolute;
     inset: 0;
@@ -72,7 +87,6 @@
     height: 100%;
     object-fit: cover;
 }
-
 
 .background-image::after {
     content: "";

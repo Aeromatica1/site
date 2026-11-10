@@ -2,43 +2,36 @@
     position: relative;
     width: 100%;
     min-height: calc(100vh - 70px);
-    overflow: hidden; 
-}
-
-.background-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../assets/fundoaeroporto2.png');
-    background-size: cover;
-    background-position: left;
-    filter: blur(8px); 
-    transform: scale(1.1); 
-    z-index: -1;
-}
-
-.login-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 70px);
-    z-index: 1;
+    background-image: url('../assets/fundoaeroporto2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.form-login{
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent; 
+}
+
+.form-login {
     border: 3px solid black;
     background-color: var(--azul-profundo);
-    padding: 20px;
-    height: 350px;
+    padding: 30px;
     width: 400px;
+    max-width: 90%;         
+    box-sizing: border-box;   
     border-radius: 10px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.form-login label{
+.form-login label {
     font-weight: bold;
     color: var(--branco);
     cursor: default;
@@ -46,23 +39,25 @@
     margin-bottom: 10px;
 }
 
-.form-login input{
+.form-login input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: none;
     border-radius: 4px;
+    color: var(--preto);
+    font-family: var(--fonte-principal);
 }
 
 .password-wrapper {
     position: relative;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-login input[id="password"] {
     margin-bottom: 0; 
-    padding-right: 40px; 
+    padding-right: 40px;
 }
 
 .toggle-icon {
@@ -82,7 +77,6 @@
 
 .toggle-icon:hover {
     color: #000;
-    transition: color 0.3s;
 }
 
 .toggle-icon.hide {
@@ -91,32 +85,47 @@
 
 .forgot-password {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 0;
     text-align: right;
     color: var(--branco);
     font-size: 14px;
     text-decoration: none;
+    margin-bottom: 15px;
+}
 
-    margin-left: 50%;
-    padding-bottom: 5px;
+.forgot-password:hover {
+    color: var(--amarelo-aeromatica);
+    text-decoration: underline;
 }
 
 .login-line {
     border: none;
     border-top: 1px solid var(--amarelo-aeromatica);
-    margin: 0 0 25px;
+    margin: 0 0 20px;
 }
 
-.login-container .btn-sec {
+.form-login p {
+    color: var(--branco);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-login-submit {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: var(--azul-profundo);
     color: var(--branco);
     border: 1px solid var(--amarelo-aeromatica);
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-login-submit:hover {
+    background-color: var(--amarelo-aeromatica);
+    color: var(--preto);
 }
 
 #btn-register {
@@ -127,7 +136,6 @@
 }
 
 #btn-register:hover {
-    color: var(--amarelo-aeromatica);
     text-decoration: underline;
-    transition: color 0.3s;
+    color: var(--amarelo-aeromatica);
 }
