@@ -10,6 +10,8 @@
 
     <script src="script/login.js" defer></script>
 </head>
+<body>
+
     <nav class="area-nav" aria-label="Navegação principal">
         <div class="titulo">
             <p class="nav-title">AEROMÁTICA</p>
@@ -21,7 +23,7 @@
         <a href="#" class="btn-nav">DOWNLOAD <i class="fa-solid fa-download"></i></a>
         <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user"></i></a>
     </nav>
-
+    
     <div class="background-container">
         <main class="login-container">
             <form action="/auth/login" method="post" class="form-login" id="form">
@@ -29,22 +31,24 @@
                 <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
                 <input type="email" id="email" name="email" placeholder="Digite seu email" required>
 
-                <label for="password"><i class="fa-solid fa-lock"></i>Senha:</label>
+                <label for="password"><i class="fa-solid fa-lock"></i> Senha:</label>
                 <div class="password-wrapper">
                     <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-                        <i class="fa-solid fa-eye toggle-icon" id="showPassword"></i>
-                        <i class="fa-solid fa-eye-slash toggle-icon hide" id="hidePassword"></i>
+                    <i class="fa-solid fa-eye toggle-icon" id="showPassword"></i>
+                    <i class="fa-solid fa-eye-slash toggle-icon hide" id="hidePassword"></i>
                 </div>
+                
                 <a href="#" class="forgot-password">Esqueci minha senha</a>
                 <hr class="login-line">
                 <p id="message"></p>
                 <p>Não possui uma conta? <a href="register.html" id="btn-register">Cadastre-se</a></p>
 
-                <button type="submit" class="btn-sec">Entrar</button>
+                <button type="submit" class="btn-login-submit">Entrar</button>
             </form>
         </main>
     </div>
-        <footer class="site-footer">
+
+    <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-brand">
                 <p class="footer-title">AEROMÁTICA</p>
@@ -54,10 +58,10 @@
             <nav class="footer-nav" aria-label="Navegação do rodapé">
                 <h3>NAVEGAÇÃO</h3>
                 <ul>
-                    <li><a href="#">O Jogo</a></li>
+                    <li><a href="index.html">O Jogo</a></li>
                     <li><a href="#">Ranking</a></li>
-                    <li><a href="#">Mídia</a></li>
-                    <li><a href="#">Equipe</a></li>
+                    <li><a href="midia.html">Mídia</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
                 </ul>
             </nav>
 
