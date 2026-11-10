@@ -1,0 +1,73 @@
+main {
+    background-color: var(--azul-escuro);
+    padding-bottom: 50px;
+}
+
+main h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container-midia {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto 0 auto;
+    padding: 20px;
+    border: 4px solid var(--amarelo-aeromatica);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.key-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.midia-card {
+    background-color: var(--azul-profundo);
+    border: 2px solid var(--amarelo-aeromatica);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.midia-card:hover {
+    transform: translateY(-4px);
+}
+
+.midia-card img {
+    width: 100%;
+    height: 200px;         
+    object-fit: contain;   
+    background-color: var(--azul-profundo);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.midia-card .legenda {
+    margin-top: 12px;
+    text-align: center;
+    color: var(--branco);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
