@@ -213,3 +213,15 @@ a:hover {
     text-decoration: underline;
     transition: color 0.3s;
 }
+
+.js .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition-delay: var(--delay, 0s);  
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: none;
+}
