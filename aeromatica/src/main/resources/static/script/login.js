@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const showPasswordIcon = document.querySelector("#showPassword");
-    const hidePasswordIcon = document.querySelector("#hidePassword");
+    const showPasswordIcon = document.querySelector("#hidePassword");
+    const hidePasswordIcon = document.querySelector("#showPassword");
     const passwordInput = document.querySelector("#password");
     const form = document.getElementById("form");
     const message = document.getElementById("message");
