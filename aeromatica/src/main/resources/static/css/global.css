@@ -179,3 +179,19 @@ a:hover {
     opacity: 1;
     transform: none;
 }
+
+.titulo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.titulo-link:hover {
+    text-decoration: none; 
+    opacity: 0.9;          
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.titulo:hover, .nav-title:hover {
+    cursor: pointer;
+}
