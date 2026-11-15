@@ -11,6 +11,13 @@
 
     <script src="script/index.js" defer></script>
     <script src="script/reveal.js" defer></script>
+
+    <!-- React -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
+
+    <script type="text/babel" src="script/simulador-widget.jsx" defer></script>
     <script>document.documentElement.classList.add("js");</script>
     
 </head>
@@ -86,6 +93,11 @@
             </div>
         </section>
     </main>
+    <section class="simulador-section reveal" aria-label="Mini-simulador de operação aeroportuária">
+        <h2>Teste a Torre de Controle</h2>
+        <p class="simulador-subtitulo">Ajuste as pistas e a fila de voos para equilibrar o tempo de espera e o lucro do aeroporto.</p>
+        <div id="simulador-aeromatica"></div>
+    </section>
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-brand">
