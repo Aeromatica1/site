@@ -217,3 +217,46 @@ body {
         transition: none;
     }
 }
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 480px;
+        padding: 30px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 20px;
+    }
+
+    .btn-main, .btn-sec {
+        width: 100%;
+        max-width: 280px;
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+
+    .section-aeromatica {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .text-content h2,
+    .howitwork-section > h2 {
+        font-size: 26px;
+    }
+
+    .text-content > .btn-ter {
+        width: 100%;
+        max-width: 250px;
+        display: inline-block;
+    }
+
+    .img-section {
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

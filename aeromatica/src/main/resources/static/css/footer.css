@@ -97,3 +97,51 @@ body > main {
 .footer-bottom p {
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .site-footer,
+    .site-footer * {
+        min-height: 0;
+    }
+
+    .site-footer {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 24px 16px 16px;
+    }
+
+    .footer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
+        align-items: center;
+        justify-content: flex-start !important;
+        height: auto !important;
+        min-height: auto !important;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-nav {
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        flex: none !important;
+    }
+
+    .footer-nav ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        padding-top: 12px;
+    }
+}
