@@ -259,4 +259,211 @@ body {
     .card {
         width: 100%;
     }
+
+    .simulador-section h2 {
+        font-size: 26px;
+    }
+
+    .simulador-box {
+        padding: 20px 16px;
+    }
+
+    .simulador-metricas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+.simulador-section {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 2px solid var(--amarelo-aeromatica);
+    box-sizing: border-box;
+}
+
+.simulador-section h2 {
+    font-size: 32px;
+    font-weight: var(--peso-bold);
+    color: var(--amarelo-aeromatica);
+    margin: 0 0 10px;
+}
+
+.simulador-subtitulo {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.simulador-box {
+    max-width: 780px;
+    margin: 0 auto;
+    background-color: var(--azul-profundo);
+    border: 2px solid var(--azul-medio);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    box-sizing: border-box;
+}
+
+.simulador-controles {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.controle-grupo {
+    background-color: var(--azul-medio);
+    padding: 16px 22px;
+    border-radius: 10px;
+    min-width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.controle-label {
+    font-size: 15px;
+    font-weight: var(--peso-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.controle-botoes {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn-ajuste {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--amarelo-aeromatica);
+    color: var(--azul-escuro);
+    font-size: 20px;
+    font-weight: var(--peso-bold);
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.btn-ajuste:hover {
+    opacity: 0.9;
+    transform: scale(1.06);
+}
+
+.btn-ajuste:active {
+    transform: scale(0.96);
+}
+
+.controle-valor {
+    font-size: 26px;
+    min-width: 36px;
+    text-align: center;
+    color: var(--branco);
+}
+
+.simulador-metricas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.metrica-card {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--azul-medio);
+    border-radius: 8px;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.metrica-titulo {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.metrica-valor {
+    font-size: 20px;
+    color: var(--amarelo-aeromatica);
+}
+
+.simulador-barra-wrap {
+    width: 100%;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.simulador-barra-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.simulador-barra-fill.is-ok {
+    background-color: #2ecc71;
+}
+
+.simulador-barra-fill.is-alerta {
+    background-color: var(--amarelo-aeromatica);
+}
+
+.simulador-barra-fill.is-critico {
+    background-color: #e74c3c;
+}
+
+.simulador-alerta {
+    font-weight: var(--peso-bold);
+    font-size: 15px;
+    margin: 0 0 20px;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.simulador-alerta.is-ok {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+}
+
+.simulador-alerta.is-alerta {
+    background-color: rgba(255, 204, 0, 0.15);
+    color: var(--amarelo-aeromatica);
+}
+
+.simulador-alerta.is-critico {
+    background-color: rgba(231, 76, 60, 0.18);
+    color: #ff6b6b;
+}
+
+.simulador-rodape-acoes {
+    display: flex;
+    justify-content: center;
+}
+
+.simulador-reset {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 20px;
+}
+
+@media (max-width: 480px) {
+    .controle-grupo {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .simulador-metricas {
+        grid-template-columns: 1fr;
+    }
 }
