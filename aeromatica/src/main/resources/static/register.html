@@ -13,6 +13,10 @@
     <script src="script/register.js" defer></script>
     <script src="script/reveal.js" defer></script>
     <script>document.documentElement.classList.add("js");</script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin defer></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
+    <script type="text/babel" src="script/navbar-perfil.jsx" defer></script>
 </head>
 <body class="login-body">
     <nav class="area-nav" aria-label="Navegação principal">
@@ -26,7 +30,9 @@
         <a href="midia.html">MÍDIA</a>
         <a href="equipe.html">EQUIPE</a>
         <a href="https://github.com/Aeromatica1/game" class="btn-nav" target="_blank">DOWNLOAD <i class="fa-solid fa-download"></i></a>
-        <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user"></i></a>
+        <span id="nav-piloto-root">
+            <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user"></i></a>
+        </span>
     </nav>
 
     <div class="background-container">
