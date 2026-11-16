@@ -71,6 +71,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             mostrarFeedback("Conta criada com sucesso!", "success");
+            const pilotoSalvo = {
+                name: data.name || name,
+                email: data.email || email,
+                patente: "Cadete de Torre",
+                dataRegistro: new Date().toLocaleDateString("pt-BR"),
+            };
+            localStorage.setItem("aeromatica_piloto", JSON.stringify(pilotoSalvo));
+            setTimeout(() => {
+                window.location.href = "perfil.html";
+            }, 900);
+            
             if (message) {
                 message.textContent = data.name && data.email
                     ? `Nome: ${data.name}. Email: ${data.email}`
