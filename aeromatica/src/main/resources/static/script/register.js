@@ -3,70 +3,84 @@ document.addEventListener("DOMContentLoaded", () => {
     const hidePasswordIcon = document.querySelector("#hidePassword");
     const passwordInput = document.querySelector("#password");
     const feedbackEl = document.getElementById("formFeedback");
-    const form = document.querySelector('form');
+    const form = document.querySelector("form");
     const message = document.getElementById("message");
 
-    showPasswordIcon.addEventListener("click", () => {
-        passwordInput.setAttribute("type", "text");
-        showPasswordIcon.classList.add("hide");
-        hidePasswordIcon.classList.remove("hide");
-    });
-
-    hidePasswordIcon.addEventListener("click", () => {
-        passwordInput.setAttribute("type", "password");
-        hidePasswordIcon.classList.add("hide");
-        showPasswordIcon.classList.remove("hide");
-    });
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-
-        const payload = {
-            name: name,
-            email: email,
-            password: password
-        };
-
-        const response = await fetch("/auth/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload)
+    if (showPasswordIcon && hidePasswordIcon && passwordInput) {
+        showPasswordIcon.addEventListener("click", () => {
+            passwordInput.setAttribute("type", "text");
+            showPasswordIcon.classList.add("hide");
+            hidePasswordIcon.classList.remove("hide");
         });
-        const data = await response.json();
 
-        if (data.status === 400) {
-            message.innerText = data.message;
-        } else {
-            message.innerText = "Nome: " + data.name + ". Email: " + data.email;
-        }
-    })
+        hidePasswordIcon.addEventListener("click", () => {
+            passwordInput.setAttribute("type", "password");
+            hidePasswordIcon.classList.add("hide");
+            showPasswordIcon.classList.remove("hide");
+        });
+    }
 
-   function mostrarFeedback(mensagem, tipo = "error") {
+    function mostrarFeedback(mensagem, tipo = "error") {
         if (!feedbackEl) return;
         feedbackEl.textContent = mensagem;
         feedbackEl.className = `form-feedback is-visible is-${tipo}`;
     }
 
-        if (form) {
-            form.addEventListener("submit", (event) => {
-                const inputs = [...form.querySelectorAll("input[required], input[type='email'], input[type='password'], input[type='text']")];
-                const campoVazio = inputs.find((input) => !input.value.trim());
+    if (!form) return;
 
-            if (campoVazio) {
-                event.preventDefault();
-                mostrarFeedback("Ops! Preencha todos os campos obrigatórios antes de continuar.", "error");
-                campoVazio.focus();
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const passwordInputEl = document.getElementById("password");
+
+        const name = nameInput?.value.trim() || "";
+        const email = emailInput?.value.trim() || "";
+        const password = passwordInputEl?.value || "";
+
+        if (!name || !email || !password) {
+            mostrarFeedback("Ops! Preencha todos os campos obrigatórios antes de continuar.", "error");
+            const vazio = [nameInput, emailInput, passwordInputEl].find((el) => el && !el.value.trim());
+            vazio?.focus();
+            return;
+        }
+
+        mostrarFeedback("Enviando seus dados para a torre de acesso...", "success");
+        if (message) message.textContent = "";
+
+        try {
+            const response = await fetch("/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, email, password }),
+            });
+
+            const contentType = response.headers.get("content-type") || "";
+            const data = contentType.includes("application/json")
+                ? await response.json()
+                : { message: await response.text() };
+
+            if (!response.ok || data.status === 400) {
+                const erroTexto = data.message || "Não foi possível concluir o cadastro.";
+                mostrarFeedback(erroTexto, "error");
+                if (message) message.textContent = erroTexto;
                 return;
             }
 
-            mostrarFeedback("Tudo certo! Verificando seus dados na torre de acesso...", "success");
-        });
-    }
- 
+            mostrarFeedback("Conta criada com sucesso!", "success");
+            if (message) {
+                message.textContent = data.name && data.email
+                    ? `Nome: ${data.name}. Email: ${data.email}`
+                    : "Cadastro realizado!";
+            }
+        } catch (error) {
+            mostrarFeedback(
+                "Não foi possível conectar ao servidor de cadastro (/auth/register). Verifique se o backend Java está rodando e acessível nessa rota.",
+                "error"
+            );
+        }
+    });
 });

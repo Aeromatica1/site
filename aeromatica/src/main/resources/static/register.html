@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/register.css">
 
     <script src="script/register.js" defer></script>
     <script src="script/reveal.js" defer></script>
@@ -30,17 +31,17 @@
 
     <div class="background-container">
         <main class="login-container">
-            <form action="/auth/register" method="post" class="form-login" id="form">
+            <form action="/auth/register" method="post" class="form-login" id="form" novalidate>
 
                 <label for="name"><i class="fa-solid fa-user"></i> Nome de usuário:</label>
-                <input type="text" id="name" name="name" placeholder="Digite seu nome de usuário" autocomplete="username">
+                <input type="text" id="name" name="name" placeholder="Digite seu nome de usuário" autocomplete="username" required>
 
                 <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu email" autocomplete="email">
+                <input type="email" id="email" name="email" placeholder="Digite seu email" autocomplete="email" required>
 
                 <label for="password"><i class="fa-solid fa-lock"></i> Senha:</label>
                 <div class="password-wrapper">
-                    <input type="password" id="password" name="password" placeholder="Digite sua senha" autocomplete="new-password">
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" autocomplete="new-password" required>
                     <i class="fa-solid fa-eye toggle-icon" id="showPassword"></i>
                     <i class="fa-solid fa-eye-slash toggle-icon hide" id="hidePassword"></i>
                 </div>
