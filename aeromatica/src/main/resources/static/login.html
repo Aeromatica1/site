@@ -30,11 +30,11 @@
             <form action="/auth/login" method="post" class="form-login" id="form">
                 
                 <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" >
 
                 <label for="password"><i class="fa-solid fa-lock"></i> Senha:</label>
                 <div class="password-wrapper">
-                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" >
                         <i class="fa-solid fa-eye toggle-icon" id="hidePassword"></i>
                         <i class="fa-solid fa-eye-slash toggle-icon hide" id="showPassword"></i>
                 </div>
@@ -43,7 +43,7 @@
                 <hr class="login-line">
                 <p id="message"></p>
                 <p>Não possui uma conta? <a href="register.html" id="btn-register">Cadastre-se</a></p>
-
+                <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
                 <button type="submit" class="btn-login-submit">Entrar</button>
             </form>
         </main>

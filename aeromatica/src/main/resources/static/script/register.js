@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const showPasswordIcon = document.querySelector("#showPassword");
     const hidePasswordIcon = document.querySelector("#hidePassword");
     const passwordInput = document.querySelector("#password");
+    const feedbackEl = document.getElementById("formFeedback");
+    const form = document.querySelector('form');
+    const message = document.getElementById("message");
 
     showPasswordIcon.addEventListener("click", () => {
         passwordInput.setAttribute("type", "text");
@@ -14,9 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         hidePasswordIcon.classList.add("hide");
         showPasswordIcon.classList.remove("hide");
     });
-
-     const form = document.querySelector('form');
-    const message = document.getElementById("message");
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -46,4 +46,27 @@ document.addEventListener("DOMContentLoaded", () => {
             message.innerText = "Nome: " + data.name + ". Email: " + data.email;
         }
     })
+
+   function mostrarFeedback(mensagem, tipo = "error") {
+        if (!feedbackEl) return;
+        feedbackEl.textContent = mensagem;
+        feedbackEl.className = `form-feedback is-visible is-${tipo}`;
+    }
+
+        if (form) {
+            form.addEventListener("submit", (event) => {
+                const inputs = [...form.querySelectorAll("input[required], input[type='email'], input[type='password'], input[type='text']")];
+                const campoVazio = inputs.find((input) => !input.value.trim());
+
+            if (campoVazio) {
+                event.preventDefault();
+                mostrarFeedback("Ops! Preencha todos os campos obrigatórios antes de continuar.", "error");
+                campoVazio.focus();
+                return;
+            }
+
+            mostrarFeedback("Tudo certo! Verificando seus dados na torre de acesso...", "success");
+        });
+    }
+ 
 });

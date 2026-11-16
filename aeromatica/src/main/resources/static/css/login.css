@@ -139,3 +139,28 @@
     text-decoration: underline;
     color: var(--amarelo-aeromatica);
 }
+
+.form-feedback {
+    margin-top: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+.form-feedback.is-visible {
+    display: block;
+}
+
+.form-feedback.is-error {
+    background-color: rgba(231, 76, 60, 0.18);
+    border: 1px solid #ff6b6b;
+    color: #ffd6d6;
+}
+
+.form-feedback.is-success {
+    background-color: rgba(46, 204, 113, 0.16);
+    border: 1px solid #2ecc71;
+    color: #d4f8e2;
+}
