@@ -239,3 +239,9 @@ a:hover {
         gap: 25px;
     }
 }
+
+.area-nav a.active {
+    color: var(--amarelo-aeromatica);
+    border-bottom: 2px solid var(--amarelo-aeromatica);
+    padding-bottom: 4px;
+}
