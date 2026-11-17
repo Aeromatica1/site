@@ -279,7 +279,7 @@ body {
     color: var(--branco);
     padding: 50px 20px;
     text-align: center;
-    border-top: 2px solid var(--amarelo-aeromatica);
+
     box-sizing: border-box;
 }
 
