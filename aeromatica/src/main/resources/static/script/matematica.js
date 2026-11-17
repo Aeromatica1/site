@@ -1,4 +1,3 @@
-
 (function () {
   const numero = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 2 });
   const moeda = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });

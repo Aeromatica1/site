@@ -1,136 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aeromática - O Jogo Matemático de Administração de Aeroportos</title>
-<meta name="description" content="Aeromática é um jogo de simulação que une matemática e administração de aeroportos. Baixe o jogo e teste o simulador.">
-<meta property="og:title" content="Aeromática - O Jogo Matemático de Administração de Aeroportos">
-<meta property="og:description" content="Aeromática é um jogo de simulação que une matemática e administração de aeroportos. Baixe o jogo e teste o simulador.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<script>document.documentElement.classList.add("js");</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/home.css">
-<link rel="stylesheet" href="css/simulador.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" crossorigin defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" crossorigin defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.26.4/babel.min.js" defer></script>
-<script src="script/session.js" defer></script>
-<script src="script/nav-auth.js" defer></script>
-<script src="script/reveal.js" defer></script>
-<script type="text/babel" src="script/simulador-widget.jsx"></script>
-</head>
-<body>
-<nav class="area-nav" aria-label="Navegação principal">
-  <a href="index.html" class="titulo-link">
-    <div class="titulo">
-      <p class="nav-title">AEROMÁTICA</p>
-      <p>O Jogo Matemático de Administração de Aeroportos</p>
-    </div>
-  </a>
-  <a href="index.html" class="initial" aria-current="page">O JOGO</a>
-  <a href="matematica.html">MATEMÁTICA</a>
-  <a href="midia.html">MÍDIA</a>
-  <a href="equipe.html">EQUIPE</a>
-  <a href="https://github.com/Aeromatica1/game/releases/latest" class="btn-nav" target="_blank" rel="noopener noreferrer">DOWNLOAD <i class="fa-solid fa-download" aria-hidden="true"></i></a>
-  <span id="nav-piloto-root">
-    <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user" aria-hidden="true"></i></a>
-  </span>
-</nav>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeromática - O Jogo Matemático de Administração de Aeroportos</title>
+      <meta name="description" content="Aeromática é um jogo de simulação que une matemática e administração de aeroportos. Baixe o jogo e teste o simulador.">
+      <meta property="og:title" content="Aeromática - O Jogo Matemático de Administração de Aeroportos">
+      <meta property="og:description" content="Aeromática é um jogo de simulação que une matemática e administração de aeroportos. Baixe o jogo e teste o simulador.">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="pt_BR">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/simulador.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" crossorigin defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" crossorigin defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.26.4/babel.min.js" defer></script>
+    <script src="script/session.js" defer></script>
+    <script src="script/nav-auth.js" defer></script>
+    <script src="script/reveal.js" defer></script>
+    <script type="text/babel" src="script/simulador-widget.jsx"></script>
 
-<main class="container">
-  <section class="hero-section">
-    <img src="assets/logoaeromatica.png" alt="Logo da Aeromática" class="logo">
-    <h1>O JOGO<br>DE ADMINISTRAÇÃO DE AEROPORTOS</h1>
-    <a href="https://github.com/Aeromatica1/game/releases/latest" class="btn-main" target="_blank" rel="noopener noreferrer">BAIXAR O JOGO <i class="fa-solid fa-download" aria-hidden="true"></i></a>
-    <a href="#o-jogo" class="btn-sec">SAIBA MAIS</a>
-  </section>
+  </head>
+  <body>
+  <nav class="area-nav" aria-label="Navegação principal">
+    <a href="index.html" class="titulo-link">
+      <div class="titulo">
+        <p class="nav-title">AEROMÁTICA</p>
+        <p>O Jogo Matemático de Administração de Aeroportos</p>
+      </div>
+    </a>
+    <a href="index.html" class="initial" aria-current="page">O JOGO</a>
+    <a href="matematica.html">MATEMÁTICA</a>
+    <a href="midia.html">MÍDIA</a>
+    <a href="equipe.html">EQUIPE</a>
+    <a href="https://github.com/Aeromatica1/game/releases/latest" class="btn-nav" target="_blank" rel="noopener noreferrer">DOWNLOAD <i class="fa-solid fa-download" aria-hidden="true"></i></a>
+    <span id="nav-piloto-root">
+      <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user" aria-hidden="true"></i></a>
+    </span>
+  </nav>
 
-  <section class="section-aeromatica" id="o-jogo">
-    <div class="text-content reveal reveal-left">
-      <h2>O QUE É AEROMÁTICA?</h2>
-      <p>Aeromática é um jogo de simulação e administração de aeroportos onde você toma decisões estratégicas para fazer seu empreendimento crescer.</p>
-      <p>Gerencie recursos, organize operações, enfrente desafios matemáticos e busque o melhor desempenho do seu aeroporto!</p>
-      <a href="#como-funciona" class="btn-ter">CONHEÇA O JOGO</a>
-    </div>
-    <div class="img-section reveal reveal-right">
-      <img src="assets/fotoaeroporto.png" alt="Foto do aeroporto" loading="lazy">
-    </div>
-  </section>
+  <main class="container">
+    <section class="hero-section">
+      <img src="assets/logoaeromatica.png" alt="Logo da Aeromática" class="logo">
+      <h1>O JOGO<br>DE ADMINISTRAÇÃO DE AEROPORTOS</h1>
+      <a href="https://github.com/Aeromatica1/game/releases/latest" class="btn-main" target="_blank" rel="noopener noreferrer">BAIXAR O JOGO <i class="fa-solid fa-download" aria-hidden="true"></i></a>
+      <a href="#o-jogo" class="btn-sec">SAIBA MAIS</a>
+    </section>
 
-  <section class="howitwork-section" id="como-funciona">
-    <h2 class="reveal">COMO FUNCIONA?</h2>
-    <div class="cards-container">
-      <!-- TODO: trocar a imagem de cada card por uma própria -->
-      <article class="card reveal" style="--delay: 0s">
-        <div class="card-content">
-          <h3>ADMINISTRE</h3>
-          <p>Gerencie recursos e organize operações para fazer seu aeroporto prosperar.</p>
-        </div>
-        <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
-      </article>
-      <article class="card reveal" style="--delay: 0.15s">
-        <div class="card-content">
-          <h3>TOME DECISÕES</h3>
-          <p>Defina estratégias e resolva situações do dia a dia.</p>
-        </div>
-        <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
-      </article>
-      <article class="card reveal" style="--delay: 0.3s">
-        <div class="card-content">
-          <h3>RESOLVA DESAFIOS</h3>
-          <p>Use raciocínio lógico e conhecimentos matemáticos para superar desafios.</p>
-        </div>
-        <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
-      </article>
-      <article class="card reveal" style="--delay: 0.45s">
-        <div class="card-content">
-          <h3>EVOLUA</h3>
-          <p>Melhore seu aeroporto, aumente sua capacidade e conectividade.</p>
-        </div>
-        <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
-      </article>
-    </div>
-  </section>
+    <section class="section-aeromatica" id="o-jogo">
+      <div class="text-content reveal reveal-left">
+        <h2>O QUE É AEROMÁTICA?</h2>
+        <p>Aeromática é um jogo de simulação e administração de aeroportos onde você toma decisões estratégicas para fazer seu empreendimento crescer.</p>
+        <p>Gerencie recursos, organize operações, enfrente desafios matemáticos e busque o melhor desempenho do seu aeroporto!</p>
+        <a href="#como-funciona" class="btn-ter">CONHEÇA O JOGO</a>
+      </div>
+      <div class="img-section reveal reveal-right">
+        <img src="assets/tela_jogo.jpg" alt="Foto do aeroporto" loading="lazy">
+      </div>
+    </section>
 
-  <section class="simulador-section" aria-labelledby="simulador-titulo">
-    <h2 class="reveal" id="simulador-titulo">Teste a Torre de Controle</h2>
-    <p class="simulador-subtitulo reveal">Ajuste as pistas e a fila de voos para equilibrar o tempo de espera e o lucro do aeroporto.</p>
-    <div id="simulador-aeromatica"></div>
-  </section>
-</main>
+    <section class="howitwork-section" id="como-funciona">
+      <h2 class="reveal">COMO FUNCIONA?</h2>
+      <div class="cards-container">
+        <article class="card reveal" style="--delay: 0s">
+          <div class="card-content">
+            <h3>ADMINISTRE</h3>
+            <p>Gerencie recursos e organize operações para fazer seu aeroporto prosperar.</p>
+          </div>
+          <img src="assets/fotoaeroporto.png" alt="" loading="lazy">
+        </article>
+        <article class="card reveal" style="--delay: 0.15s">
+          <div class="card-content">
+            <h3>TOME DECISÕES</h3>
+            <p>Defina estratégias e resolva situações do dia a dia.</p>
+          </div>
+          <img src="assets/quiz_ingame.jpg" alt="" loading="lazy">
+        </article>
+        <article class="card reveal" style="--delay: 0.3s">
+          <div class="card-content">
+            <h3>RESOLVA DESAFIOS</h3>
+            <p>Use raciocínio lógico e conhecimentos matemáticos para superar desafios.</p>
+          </div>
+          <img src="assets/labirinto.jpg" alt="" loading="lazy">
+        </article>
+        <article class="card reveal" style="--delay: 0.45s">
+          <div class="card-content">
+            <h3>EVOLUA</h3>
+            <p>Melhore seu aeroporto, aumente sua capacidade e conectividade.</p>
+          </div>
+          <img src="assets/campo_minado.jpg" alt="" loading="lazy">
+        </article>
+      </div>
+    </section>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-brand">
-      <p class="footer-title">AEROMÁTICA</p>
-      <p>O Jogo Matemático de Administração de Aeroportos.</p>
+    <section class="simulador-section" aria-labelledby="simulador-titulo">
+      <h2 class="reveal" id="simulador-titulo">Teste a Torre de Controle</h2>
+      <p class="simulador-subtitulo reveal">Ajuste as pistas e a fila de voos para equilibrar o tempo de espera e o lucro do aeroporto.</p>
+      <div id="simulador-aeromatica"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <p class="footer-title">AEROMÁTICA</p>
+        <p>O Jogo Matemático de Administração de Aeroportos.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <h3>NAVEGAÇÃO</h3>
+        <ul>
+          <li><a href="index.html">O Jogo</a></li>
+          <li><a href="matematica.html">Matemática</a></li>
+          <li><a href="midia.html">Mídia</a></li>
+          <li><a href="equipe.html">Equipe</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav" aria-label="Conta e download">
+        <h3>JOGAR</h3>
+        <ul>
+          <li><a href="https://github.com/Aeromatica1/game/releases/latest" target="_blank" rel="noopener noreferrer">Download</a></li>
+          <li id="footer-auth-link"><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="footer-nav" aria-label="Navegação do rodapé">
-      <h3>NAVEGAÇÃO</h3>
-      <ul>
-        <li><a href="index.html">O Jogo</a></li>
-        <li><a href="matematica.html">Matemática</a></li>
-        <li><a href="midia.html">Mídia</a></li>
-        <li><a href="equipe.html">Equipe</a></li>
-      </ul>
-    </nav>
-    <nav class="footer-nav" aria-label="Conta e download">
-      <h3>JOGAR</h3>
-      <ul>
-        <li><a href="https://github.com/Aeromatica1/game/releases/latest" target="_blank" rel="noopener noreferrer">Download</a></li>
-        <li id="footer-auth-link"><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 Equipe Aeromática &middot; Projeto escolar, sem fins lucrativos</p>
-  </div>
-</footer>
-</body>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Equipe Aeromática &middot; Projeto escolar, sem fins lucrativos</p>
+    </div>
+  </footer>
+  </body>
 </html>

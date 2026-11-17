@@ -28,7 +28,7 @@
     document.documentElement.classList.remove("no-scroll");
     imgEl.src = IMG_VAZIA;
     imgEl.alt = "";
-    ultimoFoco?.focus(); // devolve o foco a quem abriu
+    ultimoFoco?.focus();
   }
 
   miniaturas.forEach((botao) => botao.addEventListener("click", () => abrir(botao)));
