@@ -59,7 +59,7 @@ function PerfilAeromatica() {
         <i className="fa-solid fa-user-astronaut"></i>
       </div>
       <h1>{piloto.name}</h1>
-      <p className="perfil-subtitulo">Ficha oficial do piloto no Aeromática</p>
+      <p className="perfil-subtitulo">Piloto no Aeromática</p>
 
       <div className="perfil-info-lista">
         <div className="perfil-info-item">
@@ -85,7 +85,7 @@ function PerfilAeromatica() {
 
       <div className="perfil-acoes">
         <a href="index.html" className="btn-perfil-primario">
-          Voltar ao Simulador
+          Voltar para a página principal
         </a>
         <button type="button" className="btn-perfil-sair" onClick={sairDaConta}>
           Sair da conta

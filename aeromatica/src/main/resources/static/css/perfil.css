@@ -108,7 +108,13 @@
     border: 1px solid var(--branco);
 }
 
-.btn-perfil-primario:hover,
+.btn-perfil-primario:hover{
+    opacity: 0.9;
+    transform: translateY(-1px);
+    text-decoration: underline;
+    color: var(--azul-escuro);
+}
+
 .btn-perfil-sair:hover {
     opacity: 0.9;
     transform: translateY(-1px);
