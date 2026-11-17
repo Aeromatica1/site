@@ -1,0 +1,135 @@
+/* matematica.css: matematica.html */
+.main-matematica { padding: 40px 20px 60px; background-color: var(--azul-escuro); color: var(--branco); }
+.matematica-conteudo { max-width: 1000px; margin: 0 auto; }
+.matematica-conteudo h1 { font-size: 36px; text-align: center; }
+.matematica-intro { max-width: 720px; margin: 16px auto 0; line-height: 1.6; text-align: center; }
+
+.indice-formulas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 28px 0 36px; }
+.indice-formulas a {
+  padding: 8px 16px;
+  border: 2px solid var(--amarelo-aeromatica);
+  border-radius: 999px;
+  font-size: 15px;
+  color: var(--amarelo-aeromatica);
+  transition: background-color 0.3s, color 0.3s;
+}
+.indice-formulas a:hover { background-color: var(--amarelo-aeromatica); color: var(--preto); text-decoration: none; }
+
+.formula-card {
+  margin-bottom: 28px;
+  padding: 28px;
+  background-color: var(--azul-profundo);
+  border: 2px solid var(--amarelo-aeromatica);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  scroll-margin-top: 20px;
+}
+.formula-topo { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-bottom: 12px; }
+.formula-card h2, .desafios h2 { font-size: 26px; color: var(--amarelo-aeromatica); }
+.formula-codigo {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: var(--amarelo-aeromatica);
+  color: var(--azul-escuro);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: var(--peso-bold);
+}
+.formula-intro, .formula-conceito, .formula-desafio { line-height: 1.6; }
+
+.formula-math {
+  margin: 22px 0;
+  padding: 18px 16px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 1.8rem;
+  overflow-x: auto;
+}
+
+.formula-variaveis { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.formula-variaveis div { display: flex; gap: 12px; padding: 8px 12px; background-color: rgba(255, 255, 255, 0.05); border-radius: 8px; }
+.formula-variaveis dt { min-width: 28px; font-weight: var(--peso-bold); color: var(--amarelo-aeromatica); }
+.formula-variaveis dd { font-size: 15px; }
+
+.calculadora { margin: 22px 0 18px; padding: 20px; background-color: var(--azul-medio); border-radius: 10px; }
+.calculadora h3 { margin-bottom: 4px; font-size: 20px; }
+.calc-aviso { margin-bottom: 16px; font-size: 13px; opacity: 0.9; }
+.calc-campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 18px; margin-bottom: 18px; }
+.calc-campo { display: flex; flex-direction: column; }
+.calc-campo label { flex: 1; margin-bottom: 6px; font-size: 14px; font-weight: var(--peso-bold); line-height: 1.25; } /* flex:1 mantém as caixas alinhadas embaixo, mesmo com rótulos de 2 linhas */
+
+.calc-entrada {
+  display: flex;
+  align-items: stretch;
+  height: 46px;
+  background-color: var(--branco);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.calc-entrada:focus-within { border-color: var(--amarelo-aeromatica); box-shadow: 0 0 0 3px rgba(255, 212, 59, 0.3); }
+.calc-entrada:has(input[aria-invalid="true"]) { border-color: var(--vermelho-claro); }
+.calc-entrada input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 8px;
+  background: transparent;
+  border: none;
+  color: var(--preto);
+  font-size: 17px;
+  font-weight: var(--peso-bold);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.calc-entrada input:focus { outline: none; }
+.calc-entrada input::-webkit-outer-spin-button,
+.calc-entrada input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.calc-unidade { display: flex; align-items: center; padding: 0 10px; background-color: #eaf1f8; color: #3a4a5c; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.calc-btn {
+  width: 44px;
+  background-color: var(--amarelo-aeromatica);
+  border: none;
+  color: var(--azul-escuro);
+  font-size: 22px;
+  font-weight: var(--peso-bold);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.calc-btn:hover:not(:disabled) { background-color: #ffe27a; }
+.calc-btn:active:not(:disabled) { background-color: #f0c419; }
+.calc-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.calc-saida { margin-bottom: 14px; padding: 14px 16px; background-color: rgba(0, 0, 0, 0.28); border-left: 4px solid var(--amarelo-aeromatica); border-radius: 6px; }
+.calc-passos p { font-size: 15px; font-variant-numeric: tabular-nums; line-height: 1.7; overflow-wrap: anywhere; }
+.calc-resultado { margin-top: 8px; font-size: 1.4rem; font-weight: var(--peso-bold); color: var(--amarelo-aeromatica); }
+.calc-resultado.is-erro { font-size: 1rem; color: var(--vermelho-claro); }
+
+.btn-calc-reset {
+  padding: 8px 18px;
+  background-color: transparent;
+  color: var(--amarelo-aeromatica);
+  border: 2px solid var(--amarelo-aeromatica);
+  border-radius: 8px;
+  font-weight: var(--peso-bold);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn-calc-reset:hover { background-color: var(--amarelo-aeromatica); color: var(--azul-escuro); }
+
+.desafios { margin-top: 44px; }
+.desafios h2 { margin-bottom: 18px; text-align: center; }
+.desafios-grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.desafio-card { padding: 20px; background-color: var(--azul-medio); border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.desafio-card h3 { margin: 10px 0 8px; font-size: 20px; }
+.desafio-card p { font-size: 15px; line-height: 1.55; }
+.matematica-fonte { margin-top: 30px; font-size: 13px; text-align: center; opacity: 0.8; }
+
+@media (max-width: 600px) {
+  .matematica-conteudo h1 { font-size: 28px; }
+  .formula-card { padding: 20px 16px; }
+  .formula-math { font-size: 1.3rem; }
+}
