@@ -449,10 +449,13 @@ body {
 .simulador-rodape-acoes {
     display: flex;
     justify-content: center;
+    border-radius: 8px;
 }
 
 .simulador-reset {
     cursor: pointer;
+    border-radius: 1px;
+    font-family: var(--fonte-principal);
     font-size: 15px;
     padding: 10px 20px;
 }
