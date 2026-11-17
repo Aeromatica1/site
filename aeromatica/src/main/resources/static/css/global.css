@@ -26,7 +26,7 @@ body {
   flex-direction: column;
   font-family: var(--fonte-principal);
   background-color: var(--cinza-claro);
-  color: var(--preto); /* seções escuras definem o próprio texto branco */
+  color: var(--preto);
 }
 
 body > main,
@@ -92,7 +92,6 @@ a:hover { color: var(--amarelo-aeromatica); text-decoration: underline; }
   transform: translateY(-1px);
 }
 
-/* ---------- botões (links com aparência de botão) ---------- */
 .btn-nav, .btn-main, .btn-sec, .btn-ter {
   display: inline-block;
   border-radius: 4px;
@@ -136,7 +135,7 @@ a:hover { color: var(--amarelo-aeromatica); text-decoration: underline; }
 }
 .btn-ter:hover { background-color: var(--amarelo-aeromatica); color: var(--preto); }
 
-/* ---------- rodapé ---------- */
+/* ---------- footer ---------- */
 .site-footer {
   width: 100%;
   padding: 24px 30px 12px;
@@ -182,7 +181,6 @@ a:hover { color: var(--amarelo-aeromatica); text-decoration: underline; }
   opacity: 0.75;
 }
 
-/* ---------- animação de entrada (reveal.js adiciona .visible) ---------- */
 .js .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -193,8 +191,8 @@ a:hover { color: var(--amarelo-aeromatica); text-decoration: underline; }
 .js .reveal-right { transform: translateX(40px); }
 .js .reveal.visible { opacity: 1; transform: none; }
 
-/* ---------- responsivo (sempre no fim) ---------- */
-@media (max-width: 850px) {
+/* ---------- responsividade ---------- */
+@media (max-width: 1150px) {
   .area-nav { height: auto; flex-wrap: wrap; justify-content: center; padding: 15px 10px; gap: 15px; }
   .titulo-link { width: 100%; text-align: center; }
   .area-nav p { margin-left: 0; text-align: center; }

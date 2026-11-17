@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Matemática do Jogo - Aeromática</title>
+<meta name="description" content="Veja as fórmulas por trás do Aeromática (aluguel, passagens, aeronaves e pistas) e teste cada uma em uma calculadora interativa.">
+<meta property="og:title" content="A Matemática do Jogo - Aeromática">
+<meta property="og:description" content="Veja as fórmulas por trás do Aeromática (aluguel, passagens, aeronaves e pistas) e teste cada uma em uma calculadora interativa.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/matematica.css">
+<script src="script/session.js" defer></script>
+<script src="script/nav-auth.js" defer></script>
+<script src="script/reveal.js" defer></script>
+<script src="script/matematica.js" defer></script>
+</head>
+<body>
+<nav class="area-nav" aria-label="Navegação principal">
+  <a href="index.html" class="titulo-link">
+    <div class="titulo">
+      <p class="nav-title">AEROMÁTICA</p>
+      <p>O Jogo Matemático de Administração de Aeroportos</p>
+    </div>
+  </a>
+  <a href="index.html" class="initial">O JOGO</a>
+  <a href="matematica.html" aria-current="page">MATEMÁTICA</a>
+  <a href="midia.html">MÍDIA</a>
+  <a href="equipe.html">EQUIPE</a>
+  <a href="https://github.com/Aeromatica1/game/releases/latest" class="btn-nav" target="_blank" rel="noopener noreferrer">DOWNLOAD <i class="fa-solid fa-download" aria-hidden="true"></i></a>
+  <span id="nav-piloto-root">
+    <a href="login.html" class="login-icon" aria-label="Login"><i class="fa-regular fa-circle-user" aria-hidden="true"></i></a>
+  </span>
+</nav>
+
+<main class="main-matematica">
+  <div class="matematica-conteudo">
+  <h1 class="reveal">A Matemática do Jogo</h1>
+  <p class="matematica-intro reveal">No Aeromática, as decisões importantes de quem administra o aeroporto são contas. Aqui estão as quatro fórmulas do jogo. Veja o que cada letra significa, que matemática existe por trás e teste os valores na calculadora.</p>
+  <nav class="indice-formulas reveal" aria-label="Fórmulas do jogo"><a href="#aluguel">Aluguel de espaços</a><a href="#passagem">Preço de passagens</a><a href="#aeronave">Custo de aeronaves</a><a href="#pista">Expansão de pistas</a></nav>
+
+  <article class="formula-card reveal" id="aluguel">
+    <header class="formula-topo"><span class="formula-codigo"></span><h2>Aluguel de espaços</h2></header>
+    <p class="formula-intro">Define quanto o jogador arrecada ao alugar espaços do aeroporto. No jogo, ele responde a perguntas que envolvem esta fórmula para receber o aluguel.</p>
+    <math display="block" class="formula-math" aria-label="P igual a M vezes V vezes Fp vezes Na"><mi>P</mi><mo>=</mo><mi>M</mi><mo>·</mo><mi>V</mi><mo>·</mo><msub><mi>F</mi><mi>p</mi></msub><mo>·</mo><msub><mi>N</mi><mi>a</mi></msub></math>
+    <dl class="formula-variaveis"><div><dt>P</dt><dd>preço do aluguel mensal</dd></div><div><dt>M</dt><dd>metragem quadrada (m²)</dd></div><div><dt>V</dt><dd>valor base por metro quadrado</dd></div><div><dt>Fp</dt><dd>fator de fluxo de passageiros</dd></div><div><dt>Na</dt><dd>nível do aeroporto (o jogo prevê até 4 níveis)</dd></div></dl>
+    <p class="formula-conceito"><strong>Matemática por trás:</strong> produto de fatores e proporcionalidade direta. Todos os termos se multiplicam, então o preço cresce na mesma proporção de cada um.</p>
+    <form class="calculadora" data-formula="aluguel" aria-labelledby="calc-aluguel" novalidate>
+      <h3 id="calc-aluguel">Teste a fórmula</h3>
+      <p class="calc-aviso">Valores de exemplo, só para praticar. No jogo, eles variam conforme o nível e a partida.</p>
+      <div class="calc-campos"><div class="calc-campo"><label for="aluguel-m">Metragem (M)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Metragem (M)" tabindex="-1">−</button><input type="number" id="aluguel-m" name="m" value="40" min="1" step="any" data-passo="5" inputmode="decimal" required><span class="calc-unidade">m²</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Metragem (M)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="aluguel-v">Valor base por m² (V)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Valor base por m² (V)" tabindex="-1">−</button><input type="number" id="aluguel-v" name="v" value="15" min="0" step="any" data-passo="0.5" inputmode="decimal" required><span class="calc-unidade">R$/m²</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Valor base por m² (V)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="aluguel-fp">Fluxo de passageiros (Fp)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Fluxo de passageiros (Fp)" tabindex="-1">−</button><input type="number" id="aluguel-fp" name="fp" value="1.2" min="0" step="any" data-passo="0.1" inputmode="decimal" required><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Fluxo de passageiros (Fp)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="aluguel-na">Nível do aeroporto (Na)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Nível do aeroporto (Na)" tabindex="-1">−</button><input type="number" id="aluguel-na" name="na" value="2" min="1" max="4" step="any" data-passo="1" inputmode="decimal" required><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Nível do aeroporto (Na)" tabindex="-1">+</button></div></div></div>
+      <div class="calc-saida"><div class="calc-passos"></div><p class="calc-resultado" role="status"></p></div>
+      <button type="reset" class="btn-calc-reset">Restaurar exemplo</button>
+    </form>
+    <p class="formula-desafio"><strong>Experimente:</strong> dobre o nível do aeroporto (Na). O que acontece com o aluguel? E se dobrar a metragem e o nível ao mesmo tempo?</p>
+  </article>
+  <article class="formula-card reveal" id="passagem">
+    <header class="formula-topo"><span class="formula-codigo"></span><h2>Preço de passagens</h2></header>
+    <p class="formula-intro">Calcula o preço da passagem de um voo. Combustível e manutenção formam o custo do voo, e esse custo é dividido entre os passageiros.</p>
+    <math display="block" class="formula-math" aria-label="P igual a S vezes C vezes Pc mais M vezes Nq, tudo dividido por Np"><mi>P</mi><mo>=</mo><mfrac><mrow><mi>S</mi><mo>·</mo><mi>C</mi><mo>·</mo><msub><mi>P</mi><mi>c</mi></msub><mo>+</mo><mi>M</mi><mo>·</mo><msub><mi>N</mi><mi>q</mi></msub></mrow><msub><mi>N</mi><mi>p</mi></msub></mfrac></math>
+    <dl class="formula-variaveis"><div><dt>P</dt><dd>preço da passagem</dd></div><div><dt>S</dt><dd>distância (km)</dd></div><div><dt>C</dt><dd>consumo médio de combustível (L/km)</dd></div><div><dt>Pc</dt><dd>preço do combustível</dd></div><div><dt>M</dt><dd>custo de manutenção</dd></div><div><dt>Nq</dt><dd>nível de qualidade do avião</dd></div><div><dt>Np</dt><dd>número de passageiros</dd></div></dl>
+    <p class="formula-conceito"><strong>Matemática por trás:</strong> rateio de um custo total e proporção inversa. Quanto mais passageiros dividem o custo, menor o preço de cada passagem.</p>
+    <form class="calculadora" data-formula="passagem" aria-labelledby="calc-passagem" novalidate>
+      <h3 id="calc-passagem">Teste a fórmula</h3>
+      <p class="calc-aviso">Valores de exemplo, só para praticar. No jogo, eles variam conforme o nível e a partida.</p>
+      <div class="calc-campos"><div class="calc-campo"><label for="passagem-s">Distância (S)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Distância (S)" tabindex="-1">−</button><input type="number" id="passagem-s" name="s" value="800" min="0" step="any" data-passo="50" inputmode="decimal" required><span class="calc-unidade">km</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Distância (S)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="passagem-c">Consumo médio (C)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Consumo médio (C)" tabindex="-1">−</button><input type="number" id="passagem-c" name="c" value="3" min="0" step="any" data-passo="0.1" inputmode="decimal" required><span class="calc-unidade">L/km</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Consumo médio (C)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="passagem-pc">Preço do combustível (Pc)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Preço do combustível (Pc)" tabindex="-1">−</button><input type="number" id="passagem-pc" name="pc" value="5" min="0" step="any" data-passo="0.1" inputmode="decimal" required><span class="calc-unidade">R$/L</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Preço do combustível (Pc)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="passagem-m">Custo de manutenção (M)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Custo de manutenção (M)" tabindex="-1">−</button><span class="calc-unidade is-prefixo">R$</span><input type="number" id="passagem-m" name="m" value="2000" min="0" step="any" data-passo="100" inputmode="decimal" required><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Custo de manutenção (M)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="passagem-nq">Qualidade do avião (Nq)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Qualidade do avião (Nq)" tabindex="-1">−</button><input type="number" id="passagem-nq" name="nq" value="1.5" min="0" step="any" data-passo="0.1" inputmode="decimal" required><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Qualidade do avião (Nq)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="passagem-np">Passageiros (Np)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Passageiros (Np)" tabindex="-1">−</button><input type="number" id="passagem-np" name="np" value="150" min="1" step="any" data-passo="10" inputmode="decimal" required><span class="calc-unidade">pass.</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Passageiros (Np)" tabindex="-1">+</button></div></div></div>
+      <div class="calc-saida"><div class="calc-passos"></div><p class="calc-resultado" role="status"></p></div>
+      <button type="reset" class="btn-calc-reset">Restaurar exemplo</button>
+    </form>
+    <p class="formula-desafio"><strong>Experimente:</strong> aumente o número de passageiros (Np) e observe o preço cair. Depois dobre a distância: o preço dobra também? Repare que a manutenção não depende dela.</p>
+  </article>
+  <article class="formula-card reveal" id="aeronave">
+    <header class="formula-topo"><span class="formula-codigo"></span><h2>Custo de aeronaves</h2></header>
+    <p class="formula-intro">Define quanto custa comprar uma aeronave. O preço cresce com a capacidade, com a velocidade e com a tecnologia embarcada.</p>
+    <math display="block" class="formula-math" aria-label="P igual a Cp vezes T mais Vm vezes 1000 mais B"><mi>P</mi><mo>=</mo><msub><mi>C</mi><mi>p</mi></msub><mo>·</mo><mi>T</mi><mo>+</mo><msub><mi>V</mi><mi>m</mi></msub><mo>·</mo><mn>1000</mn><mo>+</mo><mi>B</mi></math>
+    <dl class="formula-variaveis"><div><dt>P</dt><dd>preço da aeronave</dd></div><div><dt>Cp</dt><dd>capacidade de passageiros</dd></div><div><dt>T</dt><dd>valor por assento</dd></div><div><dt>Vm</dt><dd>velocidade média</dd></div><div><dt>B</dt><dd>bônus tecnológico</dd></div></dl>
+    <p class="formula-conceito"><strong>Matemática por trás:</strong> função afim: uma soma de termos, cada um com o seu peso. Aqui, cada km/h de velocidade pesa 1000 no preço.</p>
+    <form class="calculadora" data-formula="aeronave" aria-labelledby="calc-aeronave" novalidate>
+      <h3 id="calc-aeronave">Teste a fórmula</h3>
+      <p class="calc-aviso">Valores de exemplo, só para praticar. No jogo, eles variam conforme o nível e a partida.</p>
+      <div class="calc-campos"><div class="calc-campo"><label for="aeronave-cp">Capacidade (Cp)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Capacidade (Cp)" tabindex="-1">−</button><input type="number" id="aeronave-cp" name="cp" value="100" min="0" step="any" data-passo="10" inputmode="decimal" required><span class="calc-unidade">pass.</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Capacidade (Cp)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="aeronave-t">Valor por assento (T)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Valor por assento (T)" tabindex="-1">−</button><span class="calc-unidade is-prefixo">R$</span><input type="number" id="aeronave-t" name="t" value="1500" min="0" step="any" data-passo="100" inputmode="decimal" required><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Valor por assento (T)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="aeronave-vm">Velocidade média (Vm)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Velocidade média (Vm)" tabindex="-1">−</button><input type="number" id="aeronave-vm" name="vm" value="600" min="0" step="any" data-passo="10" inputmode="decimal" required><span class="calc-unidade">km/h</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Velocidade média (Vm)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="aeronave-b">Bônus tecnológico (B)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Bônus tecnológico (B)" tabindex="-1">−</button><span class="calc-unidade is-prefixo">R$</span><input type="number" id="aeronave-b" name="b" value="25000" min="0" step="any" data-passo="1000" inputmode="decimal" required><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Bônus tecnológico (B)" tabindex="-1">+</button></div></div></div>
+      <div class="calc-saida"><div class="calc-passos"></div><p class="calc-resultado" role="status"></p></div>
+      <button type="reset" class="btn-calc-reset">Restaurar exemplo</button>
+    </form>
+    <p class="formula-desafio"><strong>Experimente:</strong> somar 100 km/h de velocidade acrescenta 100 000 ao preço. Somar 100 assentos acrescenta quanto? Qual dos dois pesa mais com os valores de exemplo?</p>
+  </article>
+  <article class="formula-card reveal" id="pista">
+    <header class="formula-topo"><span class="formula-codigo"></span><h2>Expansão de pistas</h2></header>
+    <p class="formula-intro">Define o custo de ampliar uma pista: o preço por metro quadrado multiplicado pela área da pista.</p>
+    <math display="block" class="formula-math" aria-label="P igual a C vezes L vezes M"><mi>P</mi><mo>=</mo><mi>C</mi><mo>·</mo><mi>L</mi><mo>·</mo><mi>M</mi></math>
+    <dl class="formula-variaveis"><div><dt>P</dt><dd>preço da pista</dd></div><div><dt>C</dt><dd>comprimento da pista</dd></div><div><dt>L</dt><dd>largura da pista</dd></div><div><dt>M</dt><dd>custo por metro quadrado</dd></div></dl>
+    <p class="formula-conceito"><strong>Matemática por trás:</strong> geometria. C × L é a área de um retângulo, e o custo é a área multiplicada pelo preço de cada m².</p>
+    <form class="calculadora" data-formula="pista" aria-labelledby="calc-pista" novalidate>
+      <h3 id="calc-pista">Teste a fórmula</h3>
+      <p class="calc-aviso">Valores de exemplo, só para praticar. No jogo, eles variam conforme o nível e a partida.</p>
+      <div class="calc-campos"><div class="calc-campo"><label for="pista-c">Comprimento (C)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Comprimento (C)" tabindex="-1">−</button><input type="number" id="pista-c" name="c" value="1500" min="0" step="any" data-passo="50" inputmode="decimal" required><span class="calc-unidade">m</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Comprimento (C)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="pista-l">Largura (L)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Largura (L)" tabindex="-1">−</button><input type="number" id="pista-l" name="l" value="45" min="0" step="any" data-passo="1" inputmode="decimal" required><span class="calc-unidade">m</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Largura (L)" tabindex="-1">+</button></div></div><div class="calc-campo"><label for="pista-m">Custo por m² (M)</label><div class="calc-entrada"><button type="button" class="calc-btn" data-delta="-1" aria-label="Diminuir Custo por m² (M)" tabindex="-1">−</button><input type="number" id="pista-m" name="m" value="20" min="0" step="any" data-passo="1" inputmode="decimal" required><span class="calc-unidade">R$/m²</span><button type="button" class="calc-btn" data-delta="1" aria-label="Aumentar Custo por m² (M)" tabindex="-1">+</button></div></div></div>
+      <div class="calc-saida"><div class="calc-passos"></div><p class="calc-resultado" role="status"></p></div>
+      <button type="reset" class="btn-calc-reset">Restaurar exemplo</button>
+    </form>
+    <p class="formula-desafio"><strong>Experimente:</strong> dobre o comprimento e a largura ao mesmo tempo. O preço dobra? Ele quadruplica, porque a área é comprimento × largura.</p>
+  </article>
+
+  <section class="desafios" aria-labelledby="desafios-titulo">
+    <h2 id="desafios-titulo">DESAFIOS DE LÓGICA</h2>
+    <div class="desafios-grade"><article class="desafio-card"><span class="formula-codigo"></span><h3>Esteiras</h3><p>Minigame de conexão lógica: o jogador define os caminhos que as malas percorrem nas esteiras. Exercita lógica e planejamento de rotas.</p></article><article class="desafio-card"><span class="formula-codigo"></span><h3>Organização de malas</h3><p>Minigame de encaixe: organizar as malas dentro do avião exige noção de espaço e de ocupação eficiente.</p></article>
+        <article class="desafio-card">
+            <span class="formula-codigo"></span>
+            <h3>Tarefas com prazo</h3>
+            <p>Tarefas de administração com matemática computacional, como organizar passageiros em uma aeronave sob restrições usando análise combinatória. Cada tarefa tem prazo, e não cumpri-la gera prejuízo.</p>
+        </article>
+    </div>
+  </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <p class="footer-title">AEROMÁTICA</p>
+      <p>O Jogo Matemático de Administração de Aeroportos.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Navegação do rodapé">
+      <h3>NAVEGAÇÃO</h3>
+      <ul>
+        <li><a href="index.html">O Jogo</a></li>
+        <li><a href="matematica.html">Matemática</a></li>
+        <li><a href="midia.html">Mídia</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-nav" aria-label="Conta e download">
+      <h3>JOGAR</h3>
+      <ul>
+        <li><a href="https://github.com/Aeromatica1/game/releases/latest" target="_blank" rel="noopener noreferrer">Download</a></li>
+        <li id="footer-auth-link"><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Equipe Aeromática &middot; Projeto escolar, sem fins lucrativos</p>
+  </div>
+</footer>
+</body>
+</html>
