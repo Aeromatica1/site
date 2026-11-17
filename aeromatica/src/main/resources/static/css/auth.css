@@ -1,0 +1,88 @@
+.background-container {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  background: url("../assets/fundoaeroporto2.png") center / cover no-repeat;
+}
+.background-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../assets/fundoaeroporto2.png") center / cover no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+}
+.login-container { width: 100%; display: flex; justify-content: center; align-items: center; padding: 20px; }
+
+.form-login {
+  width: 400px;
+  max-width: 100%;
+  padding: 30px;
+  background-color: var(--azul-profundo);
+  border: 3px solid var(--preto);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.form-titulo { margin-bottom: 22px; font-size: 26px; text-align: center; color: var(--amarelo-aeromatica); }
+.form-login label { display: block; margin-bottom: 10px; font-weight: var(--peso-bold); color: var(--branco); cursor: default; }
+.form-login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  color: var(--preto);
+  font-family: var(--fonte-principal);
+}
+.form-login input:focus-visible { border-color: var(--amarelo-aeromatica); outline: none; }
+.form-login p { margin-bottom: 15px; font-size: 14px; color: var(--branco); }
+.form-hint { margin-top: -10px; opacity: 0.8; }
+
+.password-wrapper { position: relative; margin-bottom: 20px; }
+.password-wrapper input { margin-bottom: 0; padding-right: 44px; }
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+}
+.toggle-icon:hover { color: var(--preto); }
+
+.login-line { margin: 0 0 20px; border: none; border-top: 1px solid var(--amarelo-aeromatica); }
+.auth-link { font-size: 14px; }
+
+.form-feedback { margin-top: 14px; padding: 10px 12px; border-radius: 8px; text-align: center; }
+.form-feedback:empty { display: none; }
+.form-feedback.is-info { background-color: rgba(255, 255, 255, 0.1); border: 1px solid var(--azul-ceu); color: var(--branco); }
+.form-feedback.is-error { background-color: rgba(231, 76, 60, 0.18); border: 1px solid var(--vermelho-claro); color: #ffd6d6; }
+.form-feedback.is-success { background-color: rgba(46, 204, 113, 0.16); border: 1px solid var(--verde); color: #d4f8e2; }
+
+.btn-auth-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--azul-profundo);
+  color: var(--branco);
+  border: 1px solid var(--amarelo-aeromatica);
+  border-radius: 4px;
+  font-weight: var(--peso-bold);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn-auth-submit:hover:not(:disabled) { background-color: var(--amarelo-aeromatica); color: var(--preto); }
+.btn-auth-submit:disabled { opacity: 0.6; cursor: wait; }

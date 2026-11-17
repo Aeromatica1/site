@@ -1,97 +1,59 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const showPasswordIcon = document.querySelector("#showPassword");
-    const hidePasswordIcon = document.querySelector("#hidePassword");
-    const passwordInput = document.querySelector("#password");
-    const feedbackEl = document.getElementById("formFeedback");
-    const form = document.querySelector("form");
-    const message = document.getElementById("message");
+(function () {
+  const form = document.getElementById("form");
+  const feedback = document.getElementById("formFeedback");
+  if (!form) return;
 
-    if (showPasswordIcon && hidePasswordIcon && passwordInput) {
-        showPasswordIcon.addEventListener("click", () => {
-            passwordInput.setAttribute("type", "text");
-            showPasswordIcon.classList.add("hide");
-            hidePasswordIcon.classList.remove("hide");
-        });
+  const MIN_SENHA = 8; 
+  Aeromatica.ativarToggleSenha(document.getElementById("togglePassword"), document.getElementById("password"));
 
-        hidePasswordIcon.addEventListener("click", () => {
-            passwordInput.setAttribute("type", "password");
-            hidePasswordIcon.classList.add("hide");
-            showPasswordIcon.classList.remove("hide");
-        });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const nameEl = document.getElementById("name");
+    const emailEl = document.getElementById("email");
+    const senhaEl = document.getElementById("password");
+    const name = nameEl.value.trim();
+    const email = emailEl.value.trim();
+    const password = senhaEl.value;
+    const botao = form.querySelector("button[type='submit']");
+
+    const erro =
+      !name ? [nameEl, "Informe um nome de usuário."] :
+      !email ? [emailEl, "Informe seu e-mail."] :
+      !Aeromatica.EMAIL_REGEX.test(email) ? [emailEl, "Digite um e-mail válido."] :
+      !password ? [senhaEl, "Crie uma senha."] :
+      password.length < MIN_SENHA ? [senhaEl, `A senha precisa ter pelo menos ${MIN_SENHA} caracteres.`] :
+      null;
+
+    if (erro) {
+      Aeromatica.mostrarFeedback(feedback, erro[1]);
+      erro[0].focus();
+      return;
     }
 
-    function mostrarFeedback(mensagem, tipo = "error") {
-        if (!feedbackEl) return;
-        feedbackEl.textContent = mensagem;
-        feedbackEl.className = `form-feedback is-visible is-${tipo}`;
+    botao.disabled = true; // evita criar a conta duas vezes
+    Aeromatica.mostrarFeedback(feedback, "Enviando seus dados para a torre de acesso...", "info");
+
+    try {
+      const { ok, data } = await Aeromatica.postJSON("/auth/register", { name, email, password });
+
+      if (!ok) {
+        Aeromatica.mostrarFeedback(feedback, data.message || "Não foi possível concluir o cadastro.");
+        botao.disabled = false;
+        return;
+      }
+
+      Aeromatica.salvarPiloto({
+        name: data.name || name,
+        email: data.email || email,
+        patente: data.patente || "Cadete de Torre",
+        dataRegistro: data.dataRegistro || new Date().toLocaleDateString("pt-BR"),
+      });
+      Aeromatica.mostrarFeedback(feedback, "Conta criada com sucesso!", "success");
+      setTimeout(() => { window.location.href = "perfil.html"; }, 900);
+    } catch (err) {
+      console.error("Falha no cadastro (/auth/register):", err);
+      Aeromatica.mostrarFeedback(feedback, "Não foi possível conectar ao servidor. Tente novamente em instantes.");
+      botao.disabled = false;
     }
-
-    if (!form) return;
-
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const nameInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const passwordInputEl = document.getElementById("password");
-
-        const name = nameInput?.value.trim() || "";
-        const email = emailInput?.value.trim() || "";
-        const password = passwordInputEl?.value || "";
-
-        if (!name || !email || !password) {
-            mostrarFeedback("Ops! Preencha todos os campos obrigatórios antes de continuar.", "error");
-            const vazio = [nameInput, emailInput, passwordInputEl].find((el) => el && !el.value.trim());
-            vazio?.focus();
-            return;
-        }
-
-        mostrarFeedback("Enviando seus dados para a torre de acesso...", "success");
-        if (message) message.textContent = "";
-
-        try {
-            const response = await fetch("/auth/register", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ name, email, password }),
-            });
-
-            const contentType = response.headers.get("content-type") || "";
-            const data = contentType.includes("application/json")
-                ? await response.json()
-                : { message: await response.text() };
-
-            if (!response.ok || data.status === 400) {
-                const erroTexto = data.message || "Não foi possível concluir o cadastro.";
-                mostrarFeedback(erroTexto, "error");
-                if (message) message.textContent = erroTexto;
-                return;
-            }
-
-            mostrarFeedback("Conta criada com sucesso!", "success");
-            const pilotoSalvo = {
-                name: data.name || name,
-                email: data.email || email,
-                patente: "Cadete de Torre",
-                dataRegistro: new Date().toLocaleDateString("pt-BR"),
-            };
-            localStorage.setItem("aeromatica_piloto", JSON.stringify(pilotoSalvo));
-            setTimeout(() => {
-                window.location.href = "perfil.html";
-            }, 900);
-            
-            if (message) {
-                message.textContent = data.name && data.email
-                    ? `Nome: ${data.name}. Email: ${data.email}`
-                    : "Cadastro realizado!";
-            }
-        } catch (error) {
-            mostrarFeedback(
-                "Não foi possível conectar ao servidor de cadastro (/auth/register). Verifique se o backend Java está rodando e acessível nessa rota.",
-                "error"
-            );
-        }
-    });
-});
+  });
+})();

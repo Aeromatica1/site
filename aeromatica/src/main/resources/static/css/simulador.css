@@ -1,0 +1,97 @@
+/* simulador.css: mini-simulador da home */
+.simulador-section {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  text-align: center;
+}
+.simulador-section h2 { font-size: 32px; color: var(--amarelo-aeromatica); margin-bottom: 10px; }
+.simulador-subtitulo { max-width: 620px; margin: 0 auto 30px; font-size: 16px; opacity: 0.9; }
+
+.simulador-box {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px;
+  background-color: var(--azul-profundo);
+  border: 2px solid var(--azul-medio);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+.simulador-controles { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-bottom: 26px; }
+.controle-grupo {
+  min-width: 210px;
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--azul-medio);
+  border-radius: 10px;
+}
+.controle-label { font-size: 15px; font-weight: var(--peso-bold); text-transform: uppercase; letter-spacing: 0.5px; }
+.controle-botoes { display: flex; align-items: center; gap: 18px; }
+.controle-valor { min-width: 36px; font-size: 26px; text-align: center; }
+
+.btn-ajuste {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--amarelo-aeromatica);
+  color: var(--azul-escuro);
+  font-size: 22px;
+  font-weight: var(--peso-bold);
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+.btn-ajuste:hover { opacity: 0.9; transform: scale(1.06); }
+.btn-ajuste:active { transform: scale(0.96); }
+.btn-ajuste:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+
+.simulador-metricas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+.metrica-card {
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--azul-medio);
+  border-radius: 8px;
+}
+.metrica-titulo { font-size: 13px; opacity: 0.85; }
+.metrica-valor { font-size: 20px; color: var(--amarelo-aeromatica); }
+
+.simulador-barra-wrap { height: 12px; margin-bottom: 14px; background-color: rgba(255, 255, 255, 0.12); border-radius: 999px; overflow: hidden; }
+.simulador-barra-fill { height: 100%; border-radius: 999px; transition: width 0.3s ease, background-color 0.3s ease; }
+.simulador-barra-fill.is-ok { background-color: var(--verde); }
+.simulador-barra-fill.is-alerta { background-color: var(--amarelo-aeromatica); }
+.simulador-barra-fill.is-critico { background-color: var(--vermelho); }
+
+.simulador-alerta { margin-bottom: 20px; padding: 10px 14px; border-radius: 8px; font-size: 15px; font-weight: var(--peso-bold); }
+.simulador-alerta.is-ok { background-color: rgba(46, 204, 113, 0.15); color: var(--verde); }
+.simulador-alerta.is-alerta { background-color: rgba(255, 212, 59, 0.15); color: var(--amarelo-aeromatica); }
+.simulador-alerta.is-critico { background-color: rgba(231, 76, 60, 0.18); color: var(--vermelho-claro); }
+
+.simulador-rodape-acoes { display: flex; justify-content: center; }
+.simulador-reset {
+  margin-top: 0;
+  padding: 10px 20px;
+  font-size: 15px;
+  letter-spacing: 0;
+  background-color: transparent;
+  color: var(--amarelo-aeromatica);
+  border: 2px solid var(--amarelo-aeromatica);
+  border-radius: 8px;
+}
+.simulador-reset:hover { background-color: var(--amarelo-aeromatica); color: var(--azul-escuro); }
+
+@media (max-width: 768px) {
+  .simulador-section h2 { font-size: 26px; }
+  .simulador-box { padding: 20px 16px; }
+  .simulador-metricas { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .controle-grupo { width: 100%; min-width: 0; }
+  .simulador-metricas { grid-template-columns: 1fr; }
+}
